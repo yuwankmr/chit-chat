@@ -1,0 +1,304 @@
+:root{
+    --primary-color:teal;
+}
+/* Chat Button------------------------------------ */
+.chat-show-btn{
+    background: var(--primary-color);
+    width: max-content;
+    padding: 10px;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 0 2px 10px black;
+    float: right;
+}
+.chat-show-btn i{
+    color: white;
+    font-size: 30px;
+}
+/* Chat Button------------------------------------ */
+
+.chat-app{
+    font-family: 'Roboto', sans-serif;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 100%;
+    max-width: 300px;
+    z-index: 10000000000;
+}
+
+.chat-container{
+    background: lightgray;
+    width: 100%;
+    /* max-width: 640px; */
+    /* position: relative; */
+    /* right: 10px; */
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px black;
+    border:1px solid var(--primary-color);
+    transition: transform 0.2s ease-in-out;
+    transform: scale(0);
+    transform-origin: bottom right;
+    overflow:hidden
+}
+.chat-container.visible{
+    transform: scale(1);
+}
+.chat-header{
+    background: var(--primary-color);
+    /* border-radius: 20px 20px 0 0; */
+    padding: 10px;
+    /* width: 100%; */
+}
+.chat-header .chat-hide{
+    float: right;
+    color: white;
+    cursor: pointer;
+    padding-right: 5px;
+}
+.chat-header .chat-username{
+    color: white;
+    padding-left: 5px;
+}
+.chat-header .chat-details-pic{
+    height: 30px;
+    width: 30px;
+    margin-top: -6px;
+}
+
+
+/* Chat Body Part------------------------------ */
+/* .chat-body{
+    width: 100%; 
+} */
+.chat-details {
+    background: rgb(255, 255, 255);
+}
+.chat-details-name{
+    font-weight: bold;
+    font-size: large;
+}
+.chat-details-email{
+    color: gray;
+    font-size: small;
+}
+.chat-details i{
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+    color: gray;
+    font-weight: bold;
+}
+.chat-details i span{
+    background: var(--primary-color);
+    color: white;
+    font-size: x-small;
+    padding:5px 5px;
+    border-radius: 10px;
+    right: 1px;
+    position: absolute;
+}
+
+.chat-contacts-list{
+    position: absolute;
+    z-index: 10000000002;
+    height: 50vh;
+    width: 100%;
+    overflow-y: auto;
+    display: none;
+}
+.chat-contacts-list.visible{
+    display: block;
+}
+.chat-contacts-list::-webkit-scrollbar{
+    width: 5px;
+    background: lightgray;
+}
+.chat-contacts-list::-webkit-scrollbar-thumb{
+    background: #888; 
+    border-radius:100px ;
+}
+.chat-contacts-list::-webkit-scrollbar-thumb:hover{
+    background: #555;    
+}
+.chat-contact{
+    padding: 10px;
+    background:rgb(235, 234, 234);
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+.chat-contact:hover{
+    background: lightgray;
+}
+.chat-details-pic{
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    margin-right: 5px;
+    margin-left: -5px;
+    background: gray;
+    float: left;
+}
+.chat-new-chat{
+    background: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 20px;
+    float: right;
+    color: white;
+}
+
+/* Chat histories------------------------------ */
+.chat-history{
+    /* width: 100%; */
+    padding: 10px;
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 350px;
+    padding-bottom: 20px;
+    background: lightgray;
+}
+.chat-history::-webkit-scrollbar {
+    width: 5px;
+}
+  /* Handle */
+.chat-history::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius:100px ;
+}
+  
+  /* Handle on hover */
+.chat-history::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+/* .chat-message-wrap{
+    
+} */
+.chat-message-wrap .chat-message{
+    padding: 5px 10px;
+    background: rgb(173 173 173);
+    margin: 2px 0;
+    border-radius: 0 10px 10px 10px;
+    width: max-content;
+    max-width: 150px;
+    clear: both;
+}
+/* .justnow:last-child{
+    animation: fromleft 0.1s linear;
+}
+@keyframes fromleft {
+    from {transform: translateX(100%);}
+    to {transform: translateX(0);}
+} */
+
+.chat-history .sent{
+    float: right;
+    border-radius: 10px 0px 10px 10px;
+    background: var(--primary-color);
+    color: white;
+}
+.chat-message .chat-message-sender{
+    font-size: x-small;
+    background: rgb(139, 139, 139);
+    color: rgb(31, 31, 75);
+    font-weight: bold;
+    padding:5px;
+    margin-bottom: 5px;
+    margin-left: -5px;
+    width: 100%;
+    border-left: 2px solid var(--primary-color);
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+
+}
+.chat-message .chat-message-sender-name{
+    font-size: small;
+    color: rgb(20, 20, 112);
+}
+
+.chat-message .chat-message-body{
+    font-size: large;
+    word-wrap: break-word;
+}
+.chat-message .chat-message-body a{
+    color: white;
+}
+.chat-message .chat-message-body img{
+    width: calc(100% + 10px);
+    border-radius: 10px;
+    margin: 0 -5px -5px;
+}
+.chat-message .chat-message-time{
+    font-size: 10px;
+}
+
+.chat-create{
+    /* width: 100%; */
+    background: lightgray;
+    display: flex;
+    padding: 5px;
+    /* border-radius: 20px; */
+}
+.chat-create .chat-input , .chat-create button{
+    border:0;
+    outline:0;
+}
+.chat-create .chat-input{
+    width: 100%;
+    padding: 10px;
+    height: 20px;
+    max-height: 100px;
+    margin-right: 5px;
+    border-radius: 50px;
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+    background: rgb(177, 180, 177);
+}
+.chat-create .chat-input::-webkit-scrollbar {
+    width: 2px;
+}
+  /* Handle */
+.chat-create .chat-input::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+  
+  /* Handle on hover */
+.chat-create .chat-input::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+
+.chat-create button{
+    border-radius: 100%;
+    background: var(--primary-color);
+    color: white;
+    font-size: larger;
+    padding: 0 12px;
+    cursor: pointer;
+}
+@media(max-width:640px){
+    .chat-container{
+        height: 100vh;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        border-radius: 0;
+    }
+    .chat-header{
+        border-radius: 0;
+    }
+    .chat-history{
+        height: 100vh;
+        max-height: calc((100vh - 54px) - 37px - 80px);
+    }
+}
