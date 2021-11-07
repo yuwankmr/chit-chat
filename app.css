@@ -108,7 +108,7 @@
 .chat-contacts-list{
     position: absolute;
     z-index: 10000000002;
-    height:428px;
+    height:428px;   /*ID:)()((()()()()*/
     width: 100%;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px); 
@@ -285,7 +285,7 @@
     background: rgb(177, 180, 177);
 }
 .chat-create .chat-input::-webkit-scrollbar {
-    width: 2px;
+    width: 0px;
 }
   /* Handle */
 .chat-create .chat-input::-webkit-scrollbar-thumb {
@@ -309,13 +309,14 @@
 @media(max-width:640px){
     .chat-container{
         /* height: 100vh; */
-        width: calc(100% - 20px);
-        top: 10px;
-        right: 10px;
-        bottom: 10px;
-        left: 10px;
+        /* width: calc(100% - 20px); */
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
         position: fixed;
         margin-bottom: 0;
+        border-radius: 0;
     }
     .chat-header{
         border-radius: 0;
@@ -325,7 +326,7 @@
         max-height: auto;
     } */
     .chat-contacts-list{
-        height:calc(100vh - 105px);
+        height:calc(100vh - 105px);         /*ID:)()((()()()()*/
     }
 }
 @media(min-width:640px){
