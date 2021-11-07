@@ -1,5 +1,5 @@
 :root{
-    --primary-color:teal;
+    --primary-color:royalblue;
 }
 /* Chat Button------------------------------------ */
 .chat-show-btn{
@@ -48,7 +48,7 @@
 .chat-header{
     background: var(--primary-color);
     /* border-radius: 20px 20px 0 0; */
-    padding: 10px;
+    padding: 15px 10px;
     /* width: 100%; */
 }
 .chat-header .chat-hide{
@@ -69,11 +69,14 @@
 
 
 /* Chat Body Part------------------------------ */
-/* .chat-body{
-    width: 100%; 
-} */
+.chat-body{
+    display: flex;
+    flex-flow: column;
+    height:calc(100% - 47px); 
+}
 .chat-details {
     background: rgb(255, 255, 255);
+    flex:0 1 auto;
 }
 .chat-details-name{
     font-weight: bold;
@@ -153,6 +156,7 @@
     /* width: 100%; */
     padding: 10px;
     height: 80vh;
+    flex: 1 1 auto;
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 350px;
@@ -238,6 +242,7 @@
     background: lightgray;
     display: flex;
     padding: 5px;
+    flex:0 1 auto;
     /* border-radius: 20px; */
 }
 .chat-create .chat-input , .chat-create button{
