@@ -8,6 +8,9 @@ function togglechatbox(){
 function togglecontactlist(){
     document.getElementsByClassName("chat-contacts-list")[0].classList.toggle("visible");
 }
+function viewcontact(){
+    // document.getElementsByClassName("chat-contacts-list")[0].classList.toggle("visible");
+}
 
 // Find url bi=egin
 
