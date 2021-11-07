@@ -108,13 +108,12 @@
 .chat-contacts-list{
     position: absolute;
     z-index: 10000000002;
-    height: 50%;
+    height:428px;
     width: 100%;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px); 
     overflow-y: auto;
     display: none;
-    box-shadow: 2px 2px 5px black;
 }
 .chat-contacts-list.visible{
     display: block;
@@ -203,7 +202,7 @@
     margin: 2px 0;
     border-radius: 0 10px 10px 10px;
     width: max-content;
-    max-width: 150px;
+    max-width: 70%;
     clear: both;
 }
 /* .justnow:last-child{
@@ -303,19 +302,19 @@
     border-radius: 100%;
     background: var(--primary-color);
     color: white;
-    font-size: larger;
-    padding: 0 12px;
+    font-size: 20px;
+    padding: 10px;
     cursor: pointer;
 }
 @media(max-width:640px){
     .chat-container{
         /* height: 100vh; */
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        width: calc(100% - 20px);
+        top: 10px;
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
         position: fixed;
-        border-radius: 0;
         margin-bottom: 0;
     }
     .chat-header{
@@ -325,6 +324,9 @@
         height: auto;
         max-height: auto;
     } */
+    .chat-contacts-list{
+        height:calc(100vh - 105px);
+    }
 }
 @media(min-width:640px){
     .chat-history{
