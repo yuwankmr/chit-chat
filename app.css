@@ -105,6 +105,17 @@
     flex-flow: column;
     height:calc(100% - 47px); 
 }
+
+/* tabs */
+.chat-tab{
+    display: none;
+}
+.chat-tab.visible{
+    display: block;
+}
+
+
+/* Grou[ chat tan */
 .chat-details {
     background: rgb(255, 255, 255);
     flex:0 1 auto;
@@ -141,7 +152,7 @@
 .chat-contacts-list{
     position: absolute;
     z-index: 10000000002;
-    height:370px;   /*ID:)()((()()()()*/
+    height:400px;   /*ID:)()((()()()()*/
     width: 100%;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px); 
@@ -218,10 +229,11 @@
     display: flex;
     flex-direction: column;
     background: lightgray;
-    padding-bottom: 60px;
+    margin-bottom: 50px;
 }
 .chat-history-container{
     /* flex: 1 1 auto; */
+    /* margin-bottom:40px; */
     padding: 10px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -372,16 +384,19 @@
     .chat-header{
         border-radius: 0;
     }
-    .chat-history,
+    .chat-history{
+        height:calc(100vh - 192px);
+    }
     .chat-contacts-list{
         height:calc(100vh - 132px);         /*ID:)()((()()()()*/
     }
-    .chat-history{
-        margin-bottom: 90px;
-    }
+    /* .chat-history{
+        margin-bottom: -60px;
+    } */
 }
 @media(min-width:640px){
     .chat-history{
         max-height: 350px;
+        height: 350px;
     }
 }

@@ -1,3 +1,4 @@
+
 var chathistelemnt = document.getElementsByClassName("chat-history-container")[0];
 chathistelemnt.scrollTo(0,chathistelemnt.scrollHeight);
 
@@ -5,6 +6,21 @@ function togglechatbox(){
     document.getElementsByClassName("chat-container")[0].classList.toggle("visible");
     chathistelemnt.scrollTo(0,chathistelemnt.scrollHeight);
 }
+
+function showtab(id,tab){
+    var chat_tabs = document.getElementsByClassName("chat-tab");
+    for (let chat_tab_tab = 0; chat_tab_tab < chat_tabs.length; chat_tab_tab++) {
+        chat_tabs[chat_tab_tab].classList.remove("visible");
+    }
+    document.getElementById(id).classList.add("visible");
+    
+    var chat_tabs = document.getElementsByClassName("chat-tab-btn");
+    for (let chat_tab_tab = 0; chat_tab_tab < chat_tabs.length; chat_tab_tab++) {
+        chat_tabs[chat_tab_tab].classList.remove("current-tab");
+    }
+    tab.classList.add("current-tab");
+}
+
 function togglecontactlist(){
     document.getElementsByClassName("chat-contacts-list")[0].classList.toggle("visible");
 }
