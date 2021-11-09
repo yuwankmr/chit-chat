@@ -1,4 +1,4 @@
-var chathistelemnt = document.getElementsByClassName("chat-history")[0];
+var chathistelemnt = document.getElementsByClassName("chat-history-container")[0];
 chathistelemnt.scrollTo(0,chathistelemnt.scrollHeight);
 
 function togglechatbox(){
@@ -9,7 +9,7 @@ function togglecontactlist(){
     document.getElementsByClassName("chat-contacts-list")[0].classList.toggle("visible");
 }
 function viewcontact(){
-    // document.getElementsByClassName("chat-contacts-list")[0].classList.toggle("visible");
+    // View Chat History Of Slected Contact
 }
 
 // Find url bi=egin

@@ -15,6 +15,17 @@
     color: white;
     font-size: 30px;
 }
+.chat-new-notification{
+    color: white;
+    background: red;
+    padding:5px 10px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top:-25px;
+    right: 0px;
+    position: absolute;
+    z-index: 100;
+}
 /* Chat Button------------------------------------ */
 
 .chat-app{
@@ -67,6 +78,26 @@
     margin-top: -6px;
 }
 
+/* Chat Nav BAr------------------------------- */
+
+.chat-nav-bar{
+    display: flex;
+    border-top: 1px solid teal;
+    border-bottom: 1px solid teal;
+}
+.chat-nav-bar span{
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    border-right: 1px solid aqua;
+    background-color: rgb(37, 93, 116);
+    color: white;
+    font-size: 15px;
+}
+.chat-nav-bar span.current-tab , .chat-nav-bar span:hover{
+    background:rgb(21, 55, 68);
+}
 
 /* Chat Body Part------------------------------ */
 .chat-body{
@@ -110,7 +141,7 @@
 .chat-contacts-list{
     position: absolute;
     z-index: 10000000002;
-    height:428px;   /*ID:)()((()()()()*/
+    height:370px;   /*ID:)()((()()()()*/
     width: 100%;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px); 
@@ -124,11 +155,11 @@
 }
 @keyframes blurit {
     from {
-        transform: scale(0);
+        transform: scaleY(0);
         opacity: 0;
     }
     to {
-        transform: scale(1);
+        transform: scaleY(1);
         opacity: 1; 
     }
 }
@@ -180,26 +211,32 @@
 /* Chat histories------------------------------ */
 .chat-history{
     /* width: 100%; */
-    padding: 10px;
     /* height: 80vh; */
     flex: 1 1 auto;
+    /* max-height: 350px; */
+    /* margin-bottom: 60px; */
+    display: flex;
+    flex-direction: column;
+    background: lightgray;
+    padding-bottom: 60px;
+}
+.chat-history-container{
+    /* flex: 1 1 auto; */
+    padding: 10px;
     overflow-y: auto;
     overflow-x: hidden;
-    /* max-height: 350px; */
-    padding-bottom: 20px;
-    background: lightgray;
 }
-.chat-history::-webkit-scrollbar {
+.chat-history-container::-webkit-scrollbar {
     width: 5px;
 }
   /* Handle */
-.chat-history::-webkit-scrollbar-thumb {
+.chat-history-container::-webkit-scrollbar-thumb {
     background: #888; 
     border-radius:100px ;
 }
   
   /* Handle on hover */
-.chat-history::-webkit-scrollbar-thumb:hover {
+.chat-history-container::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
 /* .chat-message-wrap{
@@ -243,7 +280,7 @@
 
 }
 .chat-message .chat-message-sender-name{
-    font-size: small;
+    font-size: medium;
     color: rgb(20, 20, 112);
 }
 
@@ -268,7 +305,12 @@
     background: lightgray;
     display: flex;
     padding: 5px;
-    flex:0 1 auto;
+    /* flex:0 1 auto; */
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right:0;
+
     /* border-radius: 20px; */
 }
 .chat-create .chat-input , .chat-create button{
@@ -330,12 +372,12 @@
     .chat-header{
         border-radius: 0;
     }
-    /* .chat-history{
-        height: auto;
-        max-height: auto;
-    } */
+    .chat-history,
     .chat-contacts-list{
-        height:calc(100vh - 105px);         /*ID:)()((()()()()*/
+        height:calc(100vh - 132px);         /*ID:)()((()()()()*/
+    }
+    .chat-history{
+        margin-bottom: 90px;
     }
 }
 @media(min-width:640px){
