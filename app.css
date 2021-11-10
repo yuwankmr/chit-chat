@@ -385,7 +385,7 @@
         border-radius: 0;
     }
     .chat-history{
-        height:calc(100vh - 192px);
+        height:calc(100vh - 132px);
     }
     .chat-contacts-list{
         height:calc(100vh - 132px);         /*ID:)()((()()()()*/
