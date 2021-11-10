@@ -17,7 +17,7 @@
 }
 .chat-new-notification{
     color: white;
-    background: white;
+    background: red;
     padding:5px 10px;
     border-radius: 20px;
     text-align: center;
@@ -152,7 +152,7 @@
 .chat-contacts-list{
     position: absolute;
     z-index: 10000000002;
-    height:400px;   /*ID:)()((()()()()*/
+    height:350px;   /*ID:)()((()()()()*/
     width: 100%;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px); 
@@ -317,7 +317,7 @@
     background: lightgray;
     display: flex;
     padding: 5px;
-    /* flex:0 1 auto; */
+    flex:0 1 auto;
     position: absolute;
     bottom: -2px;
     left: 0;
@@ -403,7 +403,7 @@
 
 /* 
     chat pic
-    
+
 */
 /* Polling tab--------------------- */
 .poll-question-container{
@@ -414,6 +414,11 @@
     border-radius: 10px;
     background: white;
     box-shadow: 0 5px 10px black;
+}
+.poll-option-container{
+    height: 0;
+    opacity: 0;
+    transition: all 0.3s linear;
 }
 .poll-option{
     width:calc(100% - 30px);
@@ -427,7 +432,12 @@
     background: lightgrey;
     cursor: pointer;
 }
+
 .poll-option label{
     width: min-content;
     /* background: gray; */
+}
+.poll-question-container:focus + .poll-option-container{
+    height: max-content;
+    opacity: 1;
 }
