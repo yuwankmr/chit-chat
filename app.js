@@ -60,6 +60,7 @@ function sendthismsg(){
                     </div>`;
     
     chathistelemnt.scrollTo(0,chathistelemnt.scrollHeight);
+    document.getElementById("chat-input").focus();
 }
 
 document.getElementById("chat-input").addEventListener("keyup", function(event) {
@@ -68,3 +69,19 @@ document.getElementById("chat-input").addEventListener("keyup", function(event) 
             sendthismsg();
     }
 });
+
+// Polling Page
+var poll_tags = [];
+filter_poll_questions = ()=>{
+    console.log(poll_tags);
+}
+filter_poll_tag = (elemnt)=>{
+    elemnt.classList.toggle("selected");
+    if(poll_tags.includes(elemnt.innerText)){
+        
+    }
+    poll_tags.push(elemnt.innerText);
+    filter_poll_questions();
+}
+
+

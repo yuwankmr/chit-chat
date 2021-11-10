@@ -229,10 +229,9 @@
     display: flex;
     flex-direction: column;
     background: lightgray;
-    margin-bottom: 50px;
 }
 .chat-history-container{
-    /* flex: 1 1 auto; */
+    flex: 1 1 auto;
     /* margin-bottom:40px; */
     padding: 10px;
     overflow-y: auto;
@@ -396,6 +395,9 @@
         border-radius: 0;
     }
     .chat-history{
+        height: calc(100vh - 80px);
+    }
+    #chat-tab-groups .chat-history{
         height:calc(100vh - 132px);
     }
     .chat-contacts-list{
@@ -407,8 +409,12 @@
 }
 @media(min-width:640px){
     .chat-history{
-        max-height: 350px;
-        height: 350px;
+        max-height: 400px;
+        height: 400px;
+        margin-bottom: 0;
+    }
+    #chat-tab-groups .chat-history{
+        margin-bottom: 50px;
     }
 }
 
@@ -417,6 +423,41 @@
 
 */
 /* Polling tab--------------------- */
+/* #chat-tab-polls .chat-history{
+    max-height: 400px;
+    height: 400px;
+    margin-bottom: 0;
+} */
+.poll-tags{
+    width: 100%;
+    /* padding: 10px; */
+    padding-bottom: 10px;
+    /* display: flex;
+    overflow-x: auto; */
+
+}
+.poll-tags:after {
+    clear:both;
+    display:table;
+    content:'';
+}
+.poll-tags span{
+    padding: 10px 15px;
+    width: max-content;
+    background: white;
+    margin: 5px 5px 0 0;
+    float: left;
+    border-radius: 20px;
+    color: var(--primary-color);
+    border:1px solid var(--primary-color);
+    cursor: pointer;
+
+}
+.poll-tags span:hover , .poll-tags span.selected{
+    background: var(--primary-color);
+    color: white;
+}
+
 .poll-question-container{
     width:calc(100% - 20px);
     padding:10px;
@@ -427,8 +468,6 @@
     box-shadow: 0 5px 10px black;
 }
 .poll-option-container{
-    height: 0;
-    opacity: 0;
     transition: all 0.3s linear;
 }
 .poll-option{
@@ -443,12 +482,11 @@
     background: lightgrey;
     cursor: pointer;
 }
-
+/* 
 .poll-option label{
     width: min-content;
-    /* background: gray; */
 }
-.poll-question-container:focus + .poll-option-container{
+.poll-question-container:focus-within .poll-option-container{
     height: max-content;
     opacity: 1;
-}
+} */
