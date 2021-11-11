@@ -46,7 +46,7 @@
                                 <div class="chat-details-email">yuwankmr@gmail.com</div>
                             </div>
         
-                            <div class="chat-contacts-list" onclick="togglecontactlist()">
+                            <div class="chat-contacts-list visible" onclick="togglecontactlist()">
                                 <div class="chat-contact" onclick="viewcontact()">
                                     <span class="chat-new-chat">15</span>
                                     <span class="chat-details-pic">
@@ -200,113 +200,123 @@
                         
                         <div class="chat-history-container">
                             <div class="poll-tags">
-                                <span onclick="filter_poll_tag(this);">All</span>
-                                <span onclick="filter_poll_tag(this);">Tech</span>
-                                <span onclick="filter_poll_tag(this);">Science</span>
-                                <span onclick="filter_poll_tag(this);">Bio</span>
-                                <span onclick="filter_poll_tag(this);">Coding</span>
-                                <span onclick="filter_poll_tag(this);">Space</span>
-                                <span onclick="filter_poll_tag(this);">Food</span>
-                                <span onclick="filter_poll_tag(this);">Film</span>
+                                <!-- Dont remove ▼ tag    -->
+                                <span class="poll-tag">All</span>
+                                <!-- Dont remove ▲ tag    -->
+
+                                <span class="poll-tag">Tech</span>
+                                <span class="poll-tag">Science</span>
+                                <span class="poll-tag">Bio</span>
+                                <span class="poll-tag">Coding</span>
+                                <span class="poll-tag">Space</span>
+                                <span class="poll-tag">Food</span>
+                                <span class="poll-tag">Film</span>
                             </div>
 
 
                             <!-- Question Conatainer -->
-                            <div class="poll-question-container Coding">
-                                <div class="poll-question">
-                                    What is your favourite Programming language?
+                            <div class="poll-question-wrap">
+                                
+                                <div class="poll-question-container Tech">
+                                    <button class="poll-question">
+                                        What is your favourite Programming language?
+                                    </button>
+    
+                                    <div class="poll-option-container">
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="PHP">
+                                            <span>PHP</span>
+                                        </label>
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="JavaScript">
+                                            <span>JavaScript</span>
+                                        </label>
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="Python">
+                                            <span>Python</span>
+                                        </label>
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="Java">
+                                            <span>Java</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="poll-question-container Space">
+                                    <button class="poll-question">
+                                        What is your favourite Programming language?
+                                    </button>
+    
+                                    <div class="poll-option-container">
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="PHP">
+                                            <span>PHP</span>
+                                        </label>
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="JavaScript">
+                                            <span>JavaScript</span>
+                                        </label>
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="Python">
+                                            <span>Python</span>
+                                        </label>
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="Java">
+                                            <span>Java</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="poll-question-container Coding">
+                                    <button class="poll-question">
+                                        What is your favourite Programming language?
+                                    </button>
+    
+                                    <div class="poll-option-container">
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="PHP">
+                                            <span>PHP</span>
+                                        </label>
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="JavaScript">
+                                            <span>JavaScript</span>
+                                        </label>
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="Python">
+                                            <span>Python</span>
+                                        </label>
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="Java">
+                                            <span>Java</span>
+                                        </label>
+                                    </div>
+                                </div>
+                               
+                                <div class="poll-question-container Film">
+                                    <button class="poll-question">
+                                        What is your favourite Programming language?
+                                    </button>
+    
+                                    <div class="poll-option-container">
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="PHP">
+                                            <span>PHP</span>
+                                        </label>
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="JavaScript">
+                                            <span>JavaScript</span>
+                                        </label>
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="Python">
+                                            <span>Python</span>
+                                        </label>
+                                        <label class="poll-option">
+                                            <input type="radio" name="Q1" value="Java">
+                                            <span>Java</span>
+                                        </label>
+                                    </div>
                                 </div>
 
-                                <div class="poll-option-container">
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="PHP" id="q1o1">
-                                        <label for="q1o1">PHP</label>
-                                    </div>
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="JavaScript" id="q1o2">
-                                        <label for="q1o2">JavaScript</label>
-                                    </div>
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="Python" id="q1o3">
-                                        <label for="q1o3">Python</label>
-                                    </div>
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="Java" id="q1o4">
-                                        <label for="q1o4">Java</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="poll-question-container Coding">
-                                <div class="poll-question">
-                                    What is your favourite Programming language?
-                                </div>
-
-                                <div class="poll-option-container">
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="PHP" id="q1o1">
-                                        <label for="q1o1">PHP</label>
-                                    </div>
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="JavaScript" id="q1o2">
-                                        <label for="q1o2">JavaScript</label>
-                                    </div>
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="Python" id="q1o3">
-                                        <label for="q1o3">Python</label>
-                                    </div>
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="Java" id="q1o4">
-                                        <label for="q1o4">Java</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="poll-question-container Coding">
-                                <div class="poll-question">
-                                    What is your favourite Programming language?
-                                </div>
-
-                                <div class="poll-option-container">
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="PHP" id="q1o1">
-                                        <label for="q1o1">PHP</label>
-                                    </div>
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="JavaScript" id="q1o2">
-                                        <label for="q1o2">JavaScript</label>
-                                    </div>
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="Python" id="q1o3">
-                                        <label for="q1o3">Python</label>
-                                    </div>
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="Java" id="q1o4">
-                                        <label for="q1o4">Java</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="poll-question-container Coding">
-                                <div class="poll-question">
-                                    What is your favourite Programming language?
-                                </div>
-
-                                <div class="poll-option-container">
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="PHP" id="q1o1">
-                                        <label for="q1o1">PHP</label>
-                                    </div>
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="JavaScript" id="q1o2">
-                                        <label for="q1o2">JavaScript</label>
-                                    </div>
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="Python" id="q1o3">
-                                        <label for="q1o3">Python</label>
-                                    </div>
-                                    <div class="poll-option">
-                                        <input type="radio" name="Q1" value="Java" id="q1o4">
-                                        <label for="q1o4">Java</label>
-                                    </div>
-                                </div>
                             </div>
 
                         </div>
@@ -316,6 +326,7 @@
                 <!-- Betting Tab -->
 
                 <div class="chat-tab" id="chat-tab-bettings">
+                    <div class="chat-history"></div>
 
                 </div>
 

@@ -395,13 +395,13 @@
         border-radius: 0;
     }
     .chat-history{
-        height: calc(100vh - 80px);
+        height: calc(100vh - 140px);
     }
     #chat-tab-groups .chat-history{
-        height:calc(100vh - 132px);
+        height:calc(100vh - 192px);
     }
     .chat-contacts-list{
-        height:calc(100vh - 132px);         /*ID:)()((()()()()*/
+        height:calc(100vh - 192px);         /*ID:)()((()()()()*/
     }
     /* .chat-history{
         margin-bottom: -60px;
@@ -458,7 +458,14 @@
     color: white;
 }
 
+
 .poll-question-container{
+    transform:translateX(calc(-100% - 20px));
+    height: 0;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+.poll-question-container.visible{
     width:calc(100% - 20px);
     padding:10px;
     margin-bottom: 10px;
@@ -466,26 +473,61 @@
     border-radius: 10px;
     background: white;
     box-shadow: 0 5px 10px black;
+    transform:translateX(0);
+    height: max-content;
+    opacity: 1;
+    /* visibility: visible; */
 }
+.poll-question{
+    /* padding: 5px 10px; */
+    font-size: large;
+    text-align: left;
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+
 .poll-option-container{
     transition: all 0.3s linear;
+    transform:scaleY(0);
+    transform-origin: top center;
 }
+.poll-question-container:active .poll-option-container,
+.poll-question-container:focus-within .poll-option-container{
+    transform:scaleY(1);
+}
+
 .poll-option{
+    width: 100%;
+    transition: transform 0.3s linear;
+    height: 0;
+}
+.poll-option input[type="radio"] {
+    display: none;
+    -webkit-appearance: none; /*to disable the default appearance of radio button*/
+    -moz-appearance: none;
+}
+.poll-option span {
     width:calc(100% - 30px);
+    display: block;
+    padding: 10px 10px;
     margin:5px 0;
-    padding: 5px;
     font-size:medium;
     font-weight:bold;
-    border:1px solid gray;
+    border:1px solid var(--primary-color);
     border-radius:10px;
-    border-left:3px solid green;
+    border-left:3px solid var(--primary-color);
     background: lightgrey;
     cursor: pointer;
 }
-/* 
-.poll-option label{
-    width: min-content;
+.poll-option input[type="radio"]:checked ~ span:first-of-type,
+.poll-option span:hover {
+    color: white;
+    background: var(--primary-color);
 }
+
+
+/* 
 .poll-question-container:focus-within .poll-option-container{
     height: max-content;
     opacity: 1;

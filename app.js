@@ -70,18 +70,51 @@ document.getElementById("chat-input").addEventListener("keyup", function(event) 
     }
 });
 
-// Polling Page
+// Polling Page -----------------------------------------------
+
 var poll_tags = [];
+poll_tags_span = document.getElementsByClassName("poll-tag");
+
 filter_poll_questions = ()=>{
-    console.log(poll_tags);
-}
-filter_poll_tag = (elemnt)=>{
-    elemnt.classList.toggle("selected");
-    if(poll_tags.includes(elemnt.innerText)){
-        
+    if(poll_tags.length == 0){
+        document.querySelectorAll(".poll-question-container").forEach(q => q.classList.add("visible"));
+        poll_tags_span[0].classList.add("selected");
+        return;
     }
-    poll_tags.push(elemnt.innerText);
-    filter_poll_questions();
+    document.querySelectorAll(".poll-question-container").forEach(q => q.classList.remove("visible"));
+    poll_tags.forEach(tag =>  document.querySelectorAll(`.${tag}`).forEach(q => q.classList.add("visible")));
 }
+filter_poll_questions();
+for (let tag_index = 0; tag_index < poll_tags_span.length; tag_index++) {
+    poll_tags_span[tag_index].addEventListener("click",()=>{
+        let clicked_tag = poll_tags_span[tag_index];
+        clicked_tag.classList.toggle("selected");
+        
+        if(clicked_tag.innerText == "All" || poll_tags == []){
+            document.querySelectorAll(".poll-tag").forEach(el => el.classList.remove("selected"));
+            poll_tags = [];
+            clicked_tag.classList.add("selected");
+            filter_poll_questions();
+            return;
+        }
+
+        poll_tags_span[0].classList.remove("selected");
+        // Remove if exist
+        if(poll_tags.includes(clicked_tag.innerText)){
+            var index = poll_tags.indexOf(clicked_tag.innerText);
+            if (index > -1) {
+                poll_tags.splice(index, 1);
+            }
+        }
+        // If not Exist
+        else{
+            poll_tags.push(clicked_tag.innerText);
+        }
+        filter_poll_questions();
+    });
+}
+
+// Polling Page Toggle ANswers Pnel on focus
+
 
 
