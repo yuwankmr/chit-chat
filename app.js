@@ -115,6 +115,10 @@ for (let tag_index = 0; tag_index < poll_tags_span.length; tag_index++) {
 }
 
 // Polling Page Toggle ANswers Pnel on focus
+// ranking, max value, low value, timer
 
-
+document.querySelectorAll(".poll-question").forEach(el => el.addEventListener("click", ()=>{
+        el.nextElementSibling.classList.toggle("visible");
+    })
+);
 
