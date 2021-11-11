@@ -489,12 +489,12 @@
 
 .poll-option-container{
     transition: all 0.3s linear;
-    transform:scaleY(0);
+    display: none;
     transform-origin: top center;
 }
 .poll-question-container:active .poll-option-container,
 .poll-question-container:focus-within .poll-option-container{
-    transform:scaleY(1);
+    display: block;
 }
 
 .poll-option{
