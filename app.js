@@ -1,28 +1,28 @@
 
-var chathistelemnt = document.getElementsByClassName("chat-history-container")[0];
+var chathistelemnt = $(".chat-history-container")[0];
 chathistelemnt.scrollTo(0,chathistelemnt.scrollHeight);
 
 function togglechatbox(){
-    document.getElementsByClassName("chat-container")[0].classList.toggle("visible");
+    $(".chat-container").eq(0).toggleClass("visible");
     chathistelemnt.scrollTo(0,chathistelemnt.scrollHeight);
 }
 
 function showtab(id,tab){
-    var chat_tabs = document.getElementsByClassName("chat-tab");
+    var chat_tabs = $(".chat-tab");
     for (let chat_tab_tab = 0; chat_tab_tab < chat_tabs.length; chat_tab_tab++) {
-        chat_tabs[chat_tab_tab].classList.remove("visible");
+        $(chat_tabs[chat_tab_tab]).removeClass("visible");
     }
-    document.getElementById(id).classList.add("visible");
+    $(`#${id}`).addClass("visible");
     
-    var chat_tabs = document.getElementsByClassName("chat-tab-btn");
+    var chat_tabs = $(".chat-tab-btn");
     for (let chat_tab_tab = 0; chat_tab_tab < chat_tabs.length; chat_tab_tab++) {
-        chat_tabs[chat_tab_tab].classList.remove("current-tab");
+        $(chat_tabs[chat_tab_tab]).removeClass("current-tab");
     }
-    tab.classList.add("current-tab");
+    $(tab).addClass("current-tab");
 }
 
 function togglecontactlist(){
-    document.getElementsByClassName("chat-contacts-list")[0].classList.toggle("visible");
+    $(".chat-contacts-list").eq(0).toggleClass("visible");
 }
 function viewcontact(){
     // View Chat History Of Slected Contact
@@ -40,14 +40,14 @@ function urlify(text) {
 // find url end
 
 function sendthismsg(){
-    var chatmsg = urlify(document.getElementById("chat-input").value.trim());
-    document.getElementById("chat-input").value = "";
+    var chatmsg = urlify($("#chat-input").val().trim());
+    $("#chat-input").val("");
     if(chatmsg == ""){
         return;
     }
     var chat_datetime = new Date().toLocaleTimeString('en-GB', { hour: "numeric", minute: "numeric"});
 
-    chathistelemnt.innerHTML +=`
+    $(chathistelemnt).append(`
     <div class="chat-message-wrap">
                         <div class="chat-message sent">
                             <div class="chat-message-body">
@@ -57,15 +57,16 @@ function sendthismsg(){
                                 ${chat_datetime}
                             </span>
                         </div>
-                    </div>`;
+                    </div>`
+                    );
     
     chathistelemnt.scrollTo(0,chathistelemnt.scrollHeight);
-    document.getElementById("chat-input").focus();
+    $("#chat-input").focus();
 }
 
-document.getElementById("chat-input").addEventListener("keyup", function(event) {
+$("#chat-input").keyup(function(event) {
     if (event.keyCode === 13) {
-            // event.preventDefault();
+            event.preventDefault();
             sendthismsg();
     }
 });
@@ -73,32 +74,32 @@ document.getElementById("chat-input").addEventListener("keyup", function(event) 
 // Polling Page -----------------------------------------------
 
 var poll_tags = [];
-poll_tags_span = document.getElementsByClassName("poll-tag");
+poll_tags_span = $(".poll-tag");
 
 filter_poll_questions = ()=>{
     if(poll_tags.length == 0){
-        document.querySelectorAll(".poll-question-container").forEach(q => q.classList.add("visible"));
-        poll_tags_span[0].classList.add("selected");
+        document.querySelectorAll(".poll-question-container").forEach(q => $(q).addClass("visible"));
+        $(poll_tags_span[0]).addClass("selected");
         return;
     }
-    document.querySelectorAll(".poll-question-container").forEach(q => q.classList.remove("visible"));
-    poll_tags.forEach(tag =>  document.querySelectorAll(`.${tag}`).forEach(q => q.classList.add("visible")));
+    document.querySelectorAll(".poll-question-container").forEach(q => $(q).removeClass("visible"));
+    poll_tags.forEach(tag =>  document.querySelectorAll(`.${tag}`).forEach(q => $(q).addClass("visible")));
 }
 filter_poll_questions();
 for (let tag_index = 0; tag_index < poll_tags_span.length; tag_index++) {
-    poll_tags_span[tag_index].addEventListener("click",()=>{
+    $(poll_tags_span[tag_index]).click(()=>{
         let clicked_tag = poll_tags_span[tag_index];
-        clicked_tag.classList.toggle("selected");
+        $(clicked_tag).toggleClass("selected");
         
         if(clicked_tag.innerText == "All" || poll_tags == []){
-            document.querySelectorAll(".poll-tag").forEach(el => el.classList.remove("selected"));
+            document.querySelectorAll(".poll-tag").forEach(el => $(el).removeClass("selected"));
             poll_tags = [];
-            clicked_tag.classList.add("selected");
+            $(clicked_tag).addClass("selected");
             filter_poll_questions();
             return;
         }
 
-        poll_tags_span[0].classList.remove("selected");
+        $(poll_tags_span[0]).removeClass("selected");
         // Remove if exist
         if(poll_tags.includes(clicked_tag.innerText)){
             var index = poll_tags.indexOf(clicked_tag.innerText);
@@ -117,8 +118,8 @@ for (let tag_index = 0; tag_index < poll_tags_span.length; tag_index++) {
 // Polling Page Toggle ANswers Pnel on focus
 // ranking, max value, low value, timer
 
-document.querySelectorAll(".poll-question").forEach(el => el.addEventListener("click", ()=>{
-        el.nextElementSibling.classList.toggle("visible");
+document.querySelectorAll(".poll-question").forEach(el => $(el).click(()=>{
+        $(el).next().toggleClass("visible");
     })
 );
 

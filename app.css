@@ -415,6 +415,7 @@
     }
     #chat-tab-groups .chat-history{
         margin-bottom: 50px;
+        height: 350px;
     }
 }
 
