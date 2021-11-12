@@ -115,11 +115,37 @@ for (let tag_index = 0; tag_index < poll_tags_span.length; tag_index++) {
     });
 }
 
-// Polling Page Toggle ANswers Pnel on focus
-// ranking, max value, low value, timer
+// ranking, max value, low value, timer Jan 5, 2022 15:37:25
+// Betting Page
 
-document.querySelectorAll(".poll-question").forEach(el => $(el).click(()=>{
-        $(el).next().toggleClass("visible");
-    })
-);
+setbettimer = (datetime, id)=>{
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+      // Get today's date and time
+
+      // Find the distance between now and the count down date
+      var distance = new Date(datetime).getTime() - new Date().getTime();
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="demo"
+      document.getElementById(id).innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById(id).innerHTML = "EXPIRED";
+      }
+    }, 1000);
+}
+setbettimer("Jan 5, 2022 15:37:25" , "betid1");
+setbettimer("Jan 5, 2020 15:37:25" , "betid2");
+
+// Betting Page
 
