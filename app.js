@@ -71,6 +71,7 @@ $("#chat-input").keyup(function(event) {
     }
 });
 
+
 // Polling Page -----------------------------------------------
 
 var poll_tags = [];
@@ -177,3 +178,33 @@ document.querySelectorAll(".betting-container").forEach(bet => $(bet).click(
 // Betting Page
 
 
+function askbet(){
+    var ask_value = $("#ask-bet").val();
+    if(ask_value == ""){
+        return;
+    }
+    var chat_datetime = new Date().toLocaleTimeString('en-GB', { hour: "numeric", minute: "numeric"});
+
+    $(".bet-ask-history").eq(0).append(`
+    <div class="chat-message-wrap">
+                        <div class="chat-message sent">
+                            <div class="chat-message-body">
+                                ${ask_value}
+                            </div>
+                            <span class="chat-message-time">
+                                ${chat_datetime}
+                            </span>
+                        </div>
+                    </div>`
+                    );
+    $("#ask-bet").val("");
+    document.getElementsByClassName("bet-ask-history")[0].scrollTo(0,document.getElementsByClassName("bet-ask-history")[0].scrollHeight);
+    $("#ask-bet").focus();
+}
+
+$("#ask-bet").keyup(function(event) {
+    if (event.keyCode === 13) {
+            event.preventDefault();
+            askbet();
+    }
+});

@@ -584,7 +584,7 @@
     width: max-content;
     cursor: pointer;
     border-radius: 5px;
-    box-shadow: 2px 1px 20px black;
+    /* box-shadow: 2px 1px 20px black; */
     float: left;
 }
 .view-top-betters{
@@ -632,7 +632,7 @@
     margin: 0;
     float: right;
     overflow-y: auto;
-    text-align: justify;
+    text-align: left;
     font-size: small;
 
 }
@@ -675,7 +675,7 @@
 }
 @media(max-width:640px){
     .bet-ask-history{
-        height: calc(100vh - 340px);
+        height: calc(100vh - 390px);
     }
 }
 .bet-ask-history::-webkit-scrollbar{
