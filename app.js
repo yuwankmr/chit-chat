@@ -115,6 +115,10 @@ for (let tag_index = 0; tag_index < poll_tags_span.length; tag_index++) {
     });
 }
 
+// Toggle Answers Box ------------------------------
+document.querySelectorAll(".poll-question").forEach(an => $(an).click(() => {$(an).next().toggleClass("visible");}));
+
+
 // ranking, max value, low value, timer Jan 5, 2022 15:37:25
 // Betting Page
 
