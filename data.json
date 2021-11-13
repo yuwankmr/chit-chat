@@ -1,0 +1,22 @@
+{
+    "users" : [
+        {
+            "id":"1",
+            "username":"john",
+            "email":"john@home.com",
+            "img":""
+        },
+        {
+            "id":"1",
+            "username":"john",
+            "email":"john@home.com",
+            "img":""
+        },
+        {
+            "id":"1",
+            "username":"john",
+            "email":"john@home.com",
+            "img":""
+        }
+    ]
+}

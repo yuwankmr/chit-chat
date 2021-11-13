@@ -151,8 +151,27 @@ setbettimer = (datetime, id)=>{
 setbettimer("Jan 5, 2022 15:37:25" , "betid1");
 setbettimer("Jan 5, 2020 15:37:25" , "betid2");
 
-document.querySelectorAll(".betting-container").forEach(bet => $(bet).click(()=>{
-    console.log("bet");
+
+function toggle_bet_preview(){
+    $(".betting-info-tab").toggleClass("visible");
+}
+
+function toggle_bet_toppers(){
+    $(".betting-top-betters").toggleClass("visible");
+}
+
+document.querySelectorAll(".betting-container").forEach(bet => $(bet).click(
+    () => {
+    $(".betting-info-card").html(`
+        <img src="${$(bet).children("img").attr("src")}" alt="image">
+        <p>${$(bet).children(".betting-info-text").children("p").text()}</p>
+    `);
+    $(".betting-info-numer").html(`
+        <span>Min:10000</span>|
+        <span>Max:100000</span>|
+        <span>Timer:10:20:30</span>
+    `);
+    toggle_bet_preview();
 }));
 
 // Betting Page
