@@ -151,5 +151,10 @@ setbettimer = (datetime, id)=>{
 setbettimer("Jan 5, 2022 15:37:25" , "betid1");
 setbettimer("Jan 5, 2020 15:37:25" , "betid2");
 
+document.querySelectorAll(".betting-container").forEach(bet => $(bet).click(()=>{
+    console.log("bet");
+}));
+
 // Betting Page
+
 

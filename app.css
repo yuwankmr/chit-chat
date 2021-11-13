@@ -576,10 +576,24 @@
 }
 
 /* Betting preview page------------------------------- */
+.back-btn-container{
+    padding: 5px 10px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+    background: white;
+    width: max-content;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 5px 10px black;
+}
+.back-btn-container:hover{
+    background: lightgray;
+}
 
 .betting-info-tab{
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
+    display: none;
     padding:10px;
     /* bottom: 0;
     left: 0; */
@@ -597,12 +611,12 @@
 }
 .betting-info-card img{
     max-width: 30%;
-    max-height: 150px;
+    height: 70px;
     object-fit: cover;
     float: left;
 }
 .betting-info-card p{
-    max-height: 130px;
+    max-height: 70px;
     max-width:calc(70% - 20px);
     padding:10px;
     margin: 0;
@@ -636,6 +650,42 @@
 .betting-info-numer span{
     font-size: small;
 }
+
+/* Betting Ask SPace------------------------------ */
+.bet-ask-history{
+    height: 150px;
+    overflow-y: auto;
+    width: calc(100% - 40px);
+    margin-top: 10px;
+    margin-bottom: 50px;
+    border: 1px solid black;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+}
+.bet-ask-history::-webkit-scrollbar{
+    width: 5px;
+    background: lightgray;
+}
+.bet-ask-history::-webkit-scrollbar-thumb{
+    background: #888; 
+    border-radius:100px ;
+}
+.bet-ask-history::-webkit-scrollbar-thumb:hover{
+    background: #555;    
+}
+
+.bet-ask-history .chat-message{
+    width: 60%;
+}
+.bet-ask-history .chat-message.sent{
+    width: max-content;
+}
+.bet-ask-space .chat-input{
+    width: calc(100% - 90px);
+}
+
+
 
 /* Betting topeers Panel-------------------------- */
 
@@ -691,3 +741,4 @@
     border-radius: 5px;
     padding:0px 10px;
 }
+
