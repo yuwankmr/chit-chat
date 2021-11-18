@@ -1,0 +1,79 @@
+Group Chat Page:
+    Chat Details
+        Group Settings:
+            Group Name
+            Group Pic - Upload
+            Created On
+            Group Participates | Remove Particpate-$
+            Add Participates-$
+                Add Participates Page:
+                    Search
+                    List Of Contacts [checkbox]
+                    DONE
+        
+        Create new Group:-$
+            Group Name
+            Group Pic - upload
+            Add Participates-$
+                Add Participates Page:
+                    Search
+                    List Of Contacts [checkbox]
+                    DONE
+        
+    Chat History
+
+Polling Page:
+    Add new Polling-$
+        Polling Question
+        Polling image - Upload
+        Option 1 [input]
+        Option 2 [input]
+        Option 3 [input]
+        Option 4 [input]
+        Add Option
+        
+        DONE
+    Tags
+    Pollings List
+        Polling Question
+        Edit this Poll-$ | Delete this poll-$
+            Edit Question [input]
+            Edit Image - upload
+            Option 1 [input]
+            ...
+            Option n [input]
+            Add Option
+
+            Tag [Input]
+            Tags [radio]
+
+            Save
+        
+        Polling Options
+    
+
+Betting Page:
+    Add New Betting-$
+        Betting Image - upload
+        Betting Details [textarea]
+        Expires On [date]
+        Min [number]
+        Max [number]
+
+        DONE
+    
+    Bettings
+        Image
+        Info
+        Edit-$ | Delete-$
+            Betting Image - upload
+            Betting Details [textarea]
+            Expires On [date]
+            Min [number]
+            Max [number]
+
+            Done
+        
+Confirm Before Delete
+
+

@@ -1,4 +1,14 @@
 
+comfirm_action_popup = (text, op1,op2,action, param)=>{
+    console.log(text);
+    if(param != undefined){
+        action(param);
+    }
+};
+remove_paticipate = (id)=>{
+    console.log("removed" + id);
+}
+
 var chathistelemnt = $(".chat-history-container")[0];
 chathistelemnt.scrollTo(0,chathistelemnt.scrollHeight);
 
@@ -160,6 +170,12 @@ function toggle_bet_preview(){
 function toggle_bet_toppers(){
     $(".betting-top-betters").toggleClass("visible");
 }
+toggle_group_info = ()=>{
+    $("#group-Info").toggleClass("visible");    
+};
+toggle_group_new = ()=>{
+    $("#create-new-group").toggleClass("visible");    
+};
 
 document.querySelectorAll(".betting-container").forEach(bet => $(bet).click(
     () => {

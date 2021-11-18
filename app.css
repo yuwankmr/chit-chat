@@ -187,6 +187,25 @@
 .chat-contacts-list::-webkit-scrollbar-thumb:hover{
     background: #555;    
 }
+.chat-group-options{
+    display: flex;
+    justify-content: space-around;
+}
+.chat-group-options div{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    background: lightsteelblue;
+    cursor: pointer;
+    border-bottom: 1px solid gray;
+}
+.chat-group-options div:hover{
+    background:lightblue;
+}
+.chat-group-options div:first-child{
+    border-right: 1px solid var(--primary-color);
+}
 .chat-contact{
     padding: 10px;
     background:rgb(235, 234, 234);
@@ -220,7 +239,7 @@
 }
 
 /* Chat histories------------------------------ */
-.chat-history{
+.cc-height-fill{
     /* width: 100%; */
     /* height: 80vh; */
     flex: 1 1 auto;
@@ -280,7 +299,7 @@
     to {transform: translateX(0);}
 } */
 
-.chat-history .sent{
+.cc-height-fill .sent{
     float: right;
     border-radius: 10px 0px 10px 10px;
     background: var(--primary-color);
@@ -379,6 +398,7 @@
     padding: 10px 12px;
     cursor: pointer;
 }
+
 @media(max-width:640px){
     .chat-container{
         /* height: 100vh; */
@@ -394,26 +414,30 @@
     .chat-header{
         border-radius: 0;
     }
-    .chat-history{
-        height: calc(100vh - 140px);
+    .cc-height-fill{
+        height: calc(100vh - 155px);
     }
-    #chat-tab-groups .chat-history{
+    #group-chat{
         height:calc(100vh - 192px);
     }
     .chat-contacts-list{
         height:calc(100vh - 192px);         /*ID:)()((()()()()*/
     }
-    /* .chat-history{
+    /* .cc-height-fill{
         margin-bottom: -60px;
     } */
 }
 @media(min-width:640px){
-    .chat-history{
+    .cc-height-fill{
         max-height: 400px;
         height: 400px;
         margin-bottom: 0;
     }
-    #chat-tab-groups .chat-history{
+    #group-Info,
+    #create-new-group{
+        height: 380px;
+    }
+    #group-chat{
         margin-bottom: 50px;
         height: 350px;
     }
@@ -423,8 +447,8 @@
     chat pic
 
 */
-/* Polling tab--------------------- */
-/* #chat-tab-polls .chat-history{
+/* Polling tab--------------------- ------------------------*/
+/* #chat-tab-polls .cc-height-fill{
     max-height: 400px;
     height: 400px;
     margin-bottom: 0;
@@ -596,19 +620,48 @@
     background: lightgray;
 }
 
-.betting-info-tab{
+.betting-info-tab,
+#group-Info,
+#cc_confirmation_popup,
+#create-new-group{
     width: 100%;
     /* height: 100%; */
     transform:translateX(100%);
     padding:10px;
-    /* bottom: 0;
-    left: 0; */
     background: lightgray;
     position: absolute;
     z-index: 10000000005;
     transition: transform 0.2s ease-in-out;
+    /* overflow-y: auto; */
 }
-.betting-info-tab.visible{
+#cc_confirmation_popup{
+    z-index: 10000000009;
+}
+/* GROUP INFO TAB----------------------------------------- */
+#group-Info,
+#create-new-group{
+    overflow-y: auto;
+    width: calc(100% - 20px);
+    bottom: 0;
+}
+#group-Info::-webkit-scrollbar {
+    width: 5px;
+}
+  /* Handle */
+#group-Info::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+  
+  /* Handle on hover */
+#group-Info::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+/* GROUP INFO TAB----------------------------------------- */
+
+.betting-info-tab.visible,
+#group-Info.visible,
+#cc_confirmation_popup.visible,
+#create-new-group.visible{
     transform:translateX(0);
 }
 .betting-info-card{
