@@ -1,11 +1,17 @@
 
 comfirm_action_popup = (text, op1,op2,action, param)=>{
-    console.log(text);
+    $("#cc_confirmation_popup").toggleClass("visible");
+    $("#cc_confirmation_popup h4").text(text);
+    $("#cc_confirmation_popup .cc_yes").text(op1.toUpperCase());
+    $("#cc_confirmation_popup .cc_no").text(op2.toUpperCase());
     if(param != undefined){
         action(param);
     }
 };
 remove_paticipate = (id)=>{
+    console.log("removed" + id);
+}
+delete_poll = (id)=>{
     console.log("removed" + id);
 }
 
@@ -37,6 +43,10 @@ function togglecontactlist(){
 function viewcontact(){
     // View Chat History Of Slected Contact
 }
+
+document.querySelectorAll(".group-image-container img").forEach(img=>$(img).event.click(()=>{
+    $(img).next().click();
+}));
 
 // Find url bi=egin
 
@@ -175,6 +185,12 @@ toggle_group_info = ()=>{
 };
 toggle_group_new = ()=>{
     $("#create-new-group").toggleClass("visible");    
+};
+toggle_poll_new = ()=>{
+    $("#create-new-poll").toggleClass("visible");    
+};
+toggle_poll_edit = ()=>{
+    $("#edit-poll").toggleClass("visible");    
 };
 
 document.querySelectorAll(".betting-container").forEach(bet => $(bet).click(

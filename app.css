@@ -122,7 +122,7 @@
 }
 .chat-details-name{
     font-weight: bold;
-    font-size: large;
+    font-size: medium;
 }
 .chat-details-email{
     color: gray;
@@ -433,8 +433,7 @@
         height: 400px;
         margin-bottom: 0;
     }
-    #group-Info,
-    #create-new-group{
+    .cc-second-panel{
         height: 380px;
     }
     #group-chat{
@@ -442,6 +441,7 @@
         height: 350px;
     }
 }
+
 
 /* 
     chat pic
@@ -510,6 +510,11 @@
     border: 0;
     outline: 0;
     background: transparent;
+}
+.poll-question img{
+    width: calc(100% + 30px);
+    border-radius: 10px;
+    margin:-10px -15px 10px;
 }
 
 .poll-option-container{
@@ -621,9 +626,7 @@
 }
 
 .betting-info-tab,
-#group-Info,
-#cc_confirmation_popup,
-#create-new-group{
+.cc-second-panel{
     width: 100%;
     /* height: 100%; */
     transform:translateX(100%);
@@ -638,30 +641,26 @@
     z-index: 10000000009;
 }
 /* GROUP INFO TAB----------------------------------------- */
-#group-Info,
-#create-new-group{
+.cc-second-panel{
     overflow-y: auto;
     width: calc(100% - 20px);
     bottom: 0;
 }
-#group-Info::-webkit-scrollbar {
+.cc-second-panel::-webkit-scrollbar {
     width: 5px;
 }
   /* Handle */
-#group-Info::-webkit-scrollbar-thumb {
+.cc-second-panel::-webkit-scrollbar-thumb {
     background: #888; 
 }
   
   /* Handle on hover */
-#group-Info::-webkit-scrollbar-thumb:hover {
+.cc-second-panel::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
 /* GROUP INFO TAB----------------------------------------- */
 
-.betting-info-tab.visible,
-#group-Info.visible,
-#cc_confirmation_popup.visible,
-#create-new-group.visible{
+.cc-second-panel.visible{
     transform:translateX(0);
 }
 .betting-info-card{
@@ -821,3 +820,88 @@
     padding:0px 10px;
 }
 
+/* ================================================== */
+
+.group-image-container{
+    width: 100%;display: flex;justify-content: space-around;
+}
+.group-image-container img{
+    height:100px;width:100px;object-fit:cover;border-radius: 100%;cursor: pointer;
+}
+.group-name{
+    margin-bottom:10px;font-size: large ;border: 0; outline: 0;background: transparent;border-bottom: 1px solid royalblue;padding:2px;margin-top: 20px;
+}
+/* #create-new-group .chat-contact{
+    border-radius: 10px;margin-bottom: 5px;border: 0;
+}
+#create-new-group .chat-new-chat{
+    background:lightpink;color: red;font-size: x-small;
+} */
+.chat-contact-add-participate{
+    text-align: center;
+    background: lightsteelblue;
+    border-radius: 10px;
+    font-weight: bold;
+    color: royalblue;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.cc-action-btn-container{
+    display: flex;justify-content: space-around;
+}
+.cc-cancel-btn{
+    width:100%;padding: 10px 0;text-align: center;background: lightpink;margin:10px 10px 0 0px;border-radius: 10px; font-weight: bold;color: red;cursor: pointer;
+}
+.cc-save-btn{
+    width:100%;padding: 10px 0;text-align: center;background: lightgreen;margin:10px 0px 0 0px;border-radius: 10px; font-weight: bold;color: green;cursor: pointer;
+}
+.cc-edit-btn{
+    width:100%;padding: 10px 0;text-align: center;background: lightblue;margin:10px 0px 0 0px;border-radius: 10px; font-weight: bold;color: royalblue;cursor: pointer;
+}
+
+
+
+#cc_confirmation_popup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 0px);
+    padding:10px 0px;
+}
+/* @media(min-width:640px){
+    #cc_confirmation_popup{
+         padding: 10px; 
+    }
+} */
+.cc_popup_window{
+    background: white;
+    width: calc(100% - 50px);
+    margin-bottom: 80px;
+    font-size: medium;   
+    border-radius: 10px;
+    box-shadow: 2px 5px 20px black;
+}
+.cc_popup_window h4{
+    padding: 20px 15px;
+    text-align: justify;
+    margin:0;
+}
+.cc_popup_options{
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid grey;
+}
+.cc_no,.cc_yes{
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+.cc_no{
+    border-right: 1px solid gray;
+}
+.cc_yes{
+    color: red;
+}
