@@ -14,6 +14,12 @@ remove_paticipate = (id)=>{
 delete_poll = (id)=>{
     console.log("removed" + id);
 }
+delete_bet = (id)=>{
+    console.log("removed" + id);
+}
+delete_group = (id)=>{
+    console.log("removed" + id);
+}
 
 var chathistelemnt = $(".chat-history-container")[0];
 chathistelemnt.scrollTo(0,chathistelemnt.scrollHeight);
@@ -191,6 +197,12 @@ toggle_poll_new = ()=>{
 };
 toggle_poll_edit = ()=>{
     $("#edit-poll").toggleClass("visible");    
+};
+toggle_bet_new = ()=>{
+    $("#create-new-bet").toggleClass("visible");    
+};
+toggle_bet_edit = ()=>{
+    $("#cc-edit-bet").toggleClass("visible");    
 };
 
 document.querySelectorAll(".betting-container").forEach(bet => $(bet).click(
