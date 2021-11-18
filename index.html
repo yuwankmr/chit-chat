@@ -198,10 +198,11 @@
                         </div>
     
                         <div class="chat-create">
-                            <textarea class="chat-input" id="chat-input" type="text" placeholder="Type Here!"></textarea>
+                            <textarea class="chat-input" id="chat-input" type="text" placeholder="Type Here!" onkeyup="change_btn_fnc()"></textarea>
         
-                            <i class="fa fa-paperclip"></i>
-                            <button title="Send Message" onclick="sendthismsg()"><i class="fa fa-send"></i></button>
+                            <button title="Send Message" id="cc-send_btn" onclick="sendthismsg()">
+                                <i class="fa fa-paperclip"></i>
+                            </button>
                         </div>
                     </div>
 

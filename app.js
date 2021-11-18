@@ -44,7 +44,7 @@ function viewcontact(){
     // View Chat History Of Slected Contact
 }
 
-document.querySelectorAll(".group-image-container img").forEach(img=>$(img).event.click(()=>{
+document.querySelectorAll(".group-image-container img").forEach(img=>$(img).click(()=>{
     $(img).next().click();
 }));
 
@@ -206,6 +206,18 @@ document.querySelectorAll(".betting-container").forEach(bet => $(bet).click(
     `);
     toggle_bet_preview();
 }));
+
+change_btn_fnc = ()=>{
+    if($("#chat-input").val().trim() != ""){
+        $("#cc-send_btn").html(
+            `<i class="fa fa-send"></i>`
+        );
+    }else{
+        $("#cc-send_btn").html(
+            `<i class="fa fa-paperclip"></i>`
+        ); 
+    }
+};
 
 // Betting Page
 
